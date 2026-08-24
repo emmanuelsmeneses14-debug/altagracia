@@ -1,0 +1,3697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altagracia WEAR | Diseño & Confección Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --dorado: #c5a028;
+    --negro: #1f1f1f;
+    --blanco: #f8f7f4;
+    --gris-frio: #e9e7e1;
+    --gris-urbano: #d7d3cb;
+    --grafito: #2c2c2c;
+}
+html{
+    scroll-behavior:smooth;
+}
+/* 🌑 FONDO PREMIUM CON DETALLES ESPIRITUALES */
+body {
+    margin:0;
+    font-family:Arial, sans-serif;
+    color:var(--negro);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3efe7,
+            #ebe4d6,
+            #f6f1e8
+        ),
+        url("https://www.transparenttextures.com/patterns/noise.png");
+
+    background-attachment:fixed;
+    overflow-x:hidden;
+    position:relative;
+}
+/* ✨ EFECTO MANDALAS Y BIBLIAS SUTILES */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,215,120,0.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(197,160,40,0.16),
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 70% 80%,
+            rgba(255,215,120,0.12),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 30% 75%,
+            rgba(197,160,40,0.10),
+            transparent 26%
+        );
+
+    filter:blur(30px);
+
+    animation:ambientGlow 14s ease-in-out infinite alternate;
+
+    pointer-events:none;
+    z-index:-1;
+}
+body::after {
+    content:"✨"; 
+    position:fixed;
+    bottom:10%;
+    right:5%;
+    font-size:80px;
+    color:var(--negro);
+    opacity:0.03;
+    z-index: -1;
+}
+
+/* LOADER */
+#loader {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+.wind-loader{
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.wind-loader span{
+
+    height:6px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--dorado),
+        rgba(197,160,40,.2),
+        transparent
+    );
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* TAMAÑOS DIFERENTES */
+.wind-loader span:nth-child(1){
+    width:140px;
+}
+
+.wind-loader span:nth-child(2){
+    width:100px;
+    margin-left:40px;
+}
+
+.wind-loader span:nth-child(3){
+    width:160px;
+}
+
+/* EFECTO VIENTO */
+.wind-loader span::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+    transform:translateX(-100%);
+
+    animation:windMove 1.4s linear infinite;
+}
+
+.wind-loader span:nth-child(2)::before{
+    animation-delay:.2s;
+}
+
+.wind-loader span:nth-child(3)::before{
+    animation-delay:.4s;
+}
+
+@keyframes windMove{
+
+    0%{
+        transform:translateX(-100%);
+    }
+
+    100%{
+        transform:translateX(220%);
+    }
+}
+/* HEADER */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 5%;
+    background:rgba(255,255,255,0.82);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(197,160,40,0.25);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 8px 25px rgba(0,0,0,0.04);
+}
+header.scrolled{
+    padding:12px 5%;
+    background:rgba(255,255,255,0.92);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+.logo-container h2 {
+    margin:0;
+    font-family:Georgia, serif;
+    letter-spacing:3px;
+    font-size:1.3rem;
+    font-weight:700;
+}
+
+.logo-container p {
+    margin:0;
+    font-size:10px;
+    letter-spacing:4px;
+    color:var(--dorado);
+    text-transform:uppercase;
+}
+nav {
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+nav a {
+    cursor:pointer;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--negro);
+    position:relative;
+    transition:0.3s;
+}
+nav a::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0%;
+    height:2px;
+    background:var(--dorado);
+    transition:0.3s;
+}
+nav a:hover {
+    color:var(--dorado);
+}
+nav a:hover::after {
+    width:100%;
+}
+
+.search input {
+    padding:10px 18px;
+    border-radius:30px;
+    border:1px solid rgba(0,0,0,0.08);
+    outline:none;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+}
+.search input:focus {
+    border-color:var(--dorado);
+    box-shadow:0 0 0 4px rgba(197,160,40,0.12);
+}
+/* CATEGORÍAS DAMA/CABALLERO */
+.cat-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: var(--negro);
+}
+.cat-btn{
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(197,160,40,0.35);
+
+    color:var(--blanco);
+
+    padding:14px 34px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-family:'Cinzel', serif;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease,
+        color .3s ease;
+}
+
+.cat-btn:hover{
+
+    background:var(--dorado);
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(197,160,40,.25),
+        0 0 20px rgba(197,160,40,.15);
+}
+.cat-btn:hover { background: var(--dorado); color: white; }
+
+/* HERO VIDEO */
+.hero { padding:50px; }
+.hero-wrapper {
+    max-width:450px;
+    margin:auto;
+    position:relative;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.hero video {
+    width:100%;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 0;
+    box-sizing: border-box;
+    backdrop-filter:blur(2px);
+}
+
+.hero-content h1 {
+    font-family:'Cinzel', serif;
+    font-size:3rem;
+    letter-spacing:5px;
+    margin-top:20px;
+    font-weight:700;
+    text-shadow:
+    0 0 25px rgba(197,160,40,0.35),
+    0 8px 30px rgba(0,0,0,0.35);
+
+animation:heroGlow 4s ease-in-out infinite;
+}
+.hero-content h1,
+.brand-values h2,
+.lookbook-text h2,
+.testimonials h2,
+.final-cta h2,
+.final-claim h2,
+.brand-story h2 {
+    text-transform:uppercase;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.08),
+        0 0 25px rgba(197,160,40,0.15);
+
+    position:relative;
+}
+.brand-values h2::after,
+.lookbook-text h2::after,
+.testimonials h2::after,
+.final-cta h2::after,
+.final-claim h2::after,
+.brand-story h2::after {
+    content:"";
+    width:70px;
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--dorado),
+        transparent
+    );
+
+    display:block;
+    margin:18px auto 0;
+}
+.hero-content p {
+    font-family:'Playfair Display', serif;
+    font-size:1rem;
+    line-height:1.9;
+    max-width:75%;
+    margin:auto;
+    letter-spacing:0.5px;
+}
+
+/* PRODUCTOS */
+.products-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:25px;
+    padding:40px 5%;
+}
+.card{
+    position:relative;
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.72),
+            rgba(255,255,255,0.42)
+        );
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.35);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.06),
+        inset 0 1px 1px rgba(255,255,255,0.4);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        120deg,
+        rgba(255,255,255,0.35),
+        transparent 45%
+    );
+
+    z-index:2;
+    pointer-events:none;
+
+    transition:.5s ease;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:45%;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.55),
+        transparent
+    );
+
+    opacity:.7;
+
+    z-index:1;
+    pointer-events:none;
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.02);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.18),
+        0 0 30px rgba(197,160,40,0.12);
+}
+
+.card:hover::before{
+    transform:translateX(20%);
+}
+
+/* TRANSICIONES PREMIUM */
+.card,
+.value-card,
+.testimonial-card,
+.lookbook-grid img,
+.cta-btn,
+.cat-btn {
+    transition: 
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease,
+        color .35s ease;
+}
+
+/* EFECTO HOVER */
+.card:hover,
+.value-card:hover,
+.testimonial-card:hover {
+
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.14),
+        0 0 30px rgba(197,160,40,0.15);
+}
+
+.card img{
+
+    width:100%;
+    height:420px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+}
+.card:hover img{
+    transform:scale(1.08);
+    filter:brightness(.88);
+}
+/* PRODUCT CARD PREMIUM */
+
+.premium-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.product-badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+
+    background:var(--dorado);
+    color:#111;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2px;
+
+    z-index:10;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.img-container{
+    overflow:hidden;
+}
+
+.img-container img{
+    transition:
+        transform .6s ease,
+        filter .4s ease;
+}
+
+.premium-card:hover img{
+
+    transform:scale(1.08);
+
+    filter:
+        brightness(1.05)
+        contrast(1.05);
+}
+
+.card-info{
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+
+    z-index:3;
+
+    padding:18px;
+
+    color:white;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.82),
+        rgba(0,0,0,.45),
+        transparent
+    );
+}
+.card-info h3{
+    font-size:18px;
+    margin-bottom:10px;
+    line-height:1.4;
+}
+
+.price{
+    color:var(--dorado);
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.gender-tag{
+    display:inline-block;
+
+    background:rgba(197,160,40,.12);
+
+    color:var(--dorado);
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:11px;
+    letter-spacing:1px;
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+.sizes{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.sizes span{
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid rgba(0,0,0,.15);
+
+    font-size:12px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+.size-btn{
+
+    width:32px;
+    height:32px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:11px;
+    font-weight:700;
+
+    transition:.3s ease;
+}
+
+.size-btn:hover{
+
+    background:var(--dorado);
+    color:#111;
+
+    transform:translateY(-2px);
+}
+
+.size-btn.active{
+
+    background:var(--dorado);
+    color:#111;
+
+    border-color:var(--dorado);
+
+    box-shadow:0 0 15px rgba(197,160,40,.4);
+}
+
+.sizes span:hover{
+
+    background:var(--dorado);
+    color:#111;
+
+    border-color:var(--dorado);
+
+    transform:translateY(-2px);
+}
+/* EFECTO CINEMATOGRÁFICO PREMIUM */
+
+.premium-card::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.55),
+        transparent 45%
+    );
+
+    opacity:0;
+
+    transition:.5s ease;
+
+    pointer-events:none;
+}
+
+.premium-card:hover::after{
+    opacity:1;
+}
+
+/* BRILLO DESLIZANTE */
+
+.premium-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+    left:-40%;
+
+    width:60%;
+    height:250%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.28),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s ease;
+
+    z-index:5;
+}
+
+.premium-card:hover::before{
+    left:130%;
+}
+
+/* BOTONES PREMIUM */
+
+.btn{
+
+    border-radius:14px;
+
+    letter-spacing:1px;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        opacity .25s ease;
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.15);
+}
+
+.btn-buy:hover{
+
+    box-shadow:
+        0 12px 30px rgba(197,160,40,.35);
+}
+
+/* TEXTO FLOTANTE */
+
+.card-info{
+
+    position:relative;
+    z-index:8;
+}
+
+/* ANIMACIÓN DE ENTRADA PRODUCTOS */
+
+.premium-card{
+
+    animation:cardFade .7s ease;
+}
+
+@keyframes cardFade{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+.card:hover::before{
+    background:linear-gradient(
+        120deg,
+        rgba(255,255,255,0.45),
+        transparent 45%
+    );
+}
+.card:hover img {
+    transform:scale(1.05);
+}
+.btn {
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    border:none;
+    cursor:pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+.btn-cart {background:var(--negro);color:white;}
+.btn-buy {background:var(--dorado);color:var(--negro);}
+
+/* PASARELA DE TARJETAS CSS */
+.modal-pago {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%; max-width: 400px;
+    background: #fff;
+    color: #000;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    z-index: 3000;
+    display: none;
+    transition: 0.3s;
+    border: 2px solid var(--dorado);
+}
+.modal-pago.active { display: block; transform: translate(-50%, -50%) scale(1); }
+
+.input-pago {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.tarjetas-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+#overlay-pago {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    z-index: 2500;
+}
+.brand-altagracia{
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--dorado);
+}
+.trust-bar {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:35px 5%;
+    background:rgba(255,255,255,0.65);
+    backdrop-filter:blur(12px);
+    border-top:1px solid rgba(197,160,40,0.18);
+    border-bottom:1px solid rgba(197,160,40,0.18);
+    text-align:center;
+}
+
+.trust-bar div {
+    font-family: 'Georgia', serif;
+    font-size:13px;
+    letter-spacing:2px;
+    font-weight:600;
+    color:#2d2d2d;
+    text-transform:uppercase;
+    position:relative;
+}
+
+/* Línea decorativa debajo */
+.trust-bar div::after {
+    content:"";
+    display:block;
+    width:30px;
+    height:1px;
+    background:var(--dorado);
+    margin:10px auto 0;
+    opacity:0.7;
+}
+.brand-story {
+    padding:90px 10%;
+    text-align:center;
+    background:transparent;
+}
+
+.brand-story-content {
+    max-width:800px;
+    margin:auto;
+}
+
+.brand-story h2 {
+    font-family:Georgia, serif;
+    font-size:2.2rem;
+    letter-spacing:4px;
+    margin-bottom:25px;
+    color:var(--negro);
+}
+
+.brand-story p {
+    font-size:16px;
+    line-height:1.9;
+    color:#555;
+    letter-spacing:0.5px;
+}
+.lookbook {
+    padding:90px 5%;
+    background:rgba(255,255,255,0.5);
+    backdrop-filter:blur(10px);
+}
+
+.lookbook-text {
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.lookbook-text h2 {
+    font-family:Georgia, serif;
+    font-size:2rem;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+.lookbook-text p {
+    max-width:650px;
+    margin:auto;
+    color:#555;
+    line-height:1.8;
+}
+
+.lookbook-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.lookbook-grid img {
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:0.4s ease;
+}
+
+.lookbook-grid img:hover {
+    transform:scale(1.03);
+}
+.testimonials {
+    padding:90px 5%;
+    text-align:center;
+}
+
+.testimonials h2 {
+    font-family:Georgia, serif;
+    font-size:2rem;
+    letter-spacing:4px;
+    margin-bottom:50px;
+}
+
+.testimonial-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.testimonial-card {
+    background:rgba(255,255,255,0.85);
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    backdrop-filter:blur(10px);
+}
+
+.testimonial-card p {
+    font-style:italic;
+    color:#444;
+    line-height:1.8;
+}
+
+.testimonial-card span {
+    display:block;
+    margin-top:20px;
+    font-size:12px;
+    letter-spacing:2px;
+    color:var(--dorado);
+    font-weight:bold;
+}
+.final-cta {
+    padding:100px 5%;
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        rgba(197,160,40,0.08),
+        rgba(255,255,255,0.85)
+    );
+    border-top:1px solid rgba(197,160,40,0.18);
+}
+
+.final-cta h2 {
+    font-family:Georgia, serif;
+    font-size:2.5rem;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.final-cta p {
+    max-width:650px;
+    margin:auto;
+    color:#555;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.cta-btn {
+    width:auto;
+    padding:15px 35px;
+    font-size:13px;
+    letter-spacing:2px;
+}
+.brand-values {
+    padding:90px 5%;
+    text-align:center;
+}
+
+.brand-values h2 {
+    font-family:'Cinzel', serif;
+    font-size:2rem;
+    letter-spacing:4px;
+    margin-bottom:50px;
+}
+
+.values-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.value-card {
+    padding:35px 25px;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    transition:0.3s ease;
+}
+
+.value-card:hover {
+    transform:translateY(-8px);
+}
+
+.value-card h3 {
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+    color:var(--dorado);
+}
+
+.value-card p {
+    color:#555;
+    line-height:1.8;
+    font-size:14px;
+}
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 5%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .search input {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 20px;
+    }
+
+ .hero-wrapper {
+    max-width:450px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,0.18);
+
+    background:rgba(255,255,255,0.04);
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.22),
+        0 0 60px rgba(197,160,40,0.12);
+}
+    .hero-content h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-content p {
+        max-width: 90%;
+        font-size: 14px;
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    /* BRAND VALUES */
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* LOOKBOOK */
+    .lookbook-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lookbook-grid img {
+        height: 400px;
+    }
+
+    /* TESTIMONIOS */
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* PRODUCTOS */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* FOOTER */
+    footer div[style*="display: flex"] {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-img{
+    opacity:0;
+    transform:scale(0.92) translateY(40px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal-img.active{
+    opacity:1;
+    transform:scale(1) translateY(0);
+}
+.whatsapp-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:var(--dorado);
+    color:#111;
+    padding:14px 22px;
+    border-radius:40px;
+    font-weight:700;
+    text-decoration:none;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    z-index:2000;
+    transition:.3s;
+    letter-spacing:1px;
+}
+
+.whatsapp-float:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,.2);
+}
+.final-claim{
+    padding:90px 8%;
+    text-align:center;
+    margin:80px auto 0;
+    max-width:1100px;
+
+    background:rgba(255,255,255,0.65);
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(0,0,0,0.08);
+    border-radius:24px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.06);
+}
+
+.final-claim h2{
+    font-size:2.2rem;
+    letter-spacing:4px;
+    margin-bottom:20px;
+    color:var(--dorado);
+    font-family:'Cormorant Garamond', serif;
+}
+
+.final-claim p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.05rem;
+    line-height:1.8;
+    color:#1f1f1f;
+}
+@keyframes heroGlow{
+
+    0%{
+        text-shadow:
+        0 0 25px rgba(197,160,40,0.25),
+        0 8px 30px rgba(0,0,0,0.25);
+    }
+
+    50%{
+        text-shadow:
+        0 0 45px rgba(197,160,40,0.45),
+        0 10px 40px rgba(0,0,0,0.35);
+    }
+
+    100%{
+        text-shadow:
+        0 0 25px rgba(197,160,40,0.25),
+        0 8px 30px rgba(0,0,0,0.25);
+    }
+}
+@keyframes ambientGlow{
+
+    0%{
+        transform:scale(1) rotate(0deg);
+        opacity:0.9;
+    }
+
+    50%{
+        transform:scale(1.05) rotate(1deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1.08) rotate(-1deg);
+        opacity:0.85;
+    }
+}
+.promo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:40px;
+}
+.promo-card{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:35px 25px;
+    border:1px solid rgba(197,160,40,0.15);
+    transition:.35s ease;
+}
+
+.promo-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.promo-card span{
+    color:var(--dorado);
+    font-size:1.8rem;
+    font-weight:700;
+    display:block;
+    margin-bottom:15px;
+}
+
+.promo-card h3{
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.promo-card p{
+    color:#666;
+    font-size:14px;
+}
+.top-bar{
+    background:#111;
+    color:var(--dorado);
+    text-align:center;
+    padding:10px;
+    font-size:11px;
+    letter-spacing:2px;
+    font-weight:700;
+    text-transform:uppercase;
+
+    border-bottom:1px solid rgba(197,160,40,.2);
+}
+.cursor-glow{
+    position:fixed;
+    width:250px;
+    height:250px;
+
+    background:radial-gradient(
+        circle,
+        rgba(197,160,40,0.16),
+        transparent 70%
+    );
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:0;
+
+    mix-blend-mode:screen;
+
+    transition:
+        transform .08s linear,
+        opacity .3s ease;
+}
+/* TEXTO FLOTANTE SOBRE IMAGEN */
+
+.floating-view{
+
+    position:absolute;
+
+    bottom:20px;
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    font-size:11px;
+    letter-spacing:3px;
+
+    opacity:0;
+
+    transition:.45s ease;
+
+    z-index:9;
+
+    border:1px solid rgba(255,255,255,.18);
+}
+
+.premium-card:hover .floating-view{
+
+    opacity:1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+.premium-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.img-container{
+    position:relative;
+    overflow:hidden;
+}
+
+.img-container::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.65),
+        transparent 45%
+    );
+
+    opacity:.9;
+}
+
+.card-info{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:3;
+
+    padding:25px;
+
+    color:white;
+}
+
+
+
+.product-badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+
+    z-index:5;
+
+    background:var(--dorado);
+
+    color:#111;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    padding:8px 12px;
+
+    border-radius:30px;
+}
+/* MEJOR DISTRIBUCIÓN DE CARD */
+
+.premium-card{
+
+    min-height:420px;
+}
+
+/* BOTONES MÁS LIMPIOS */
+
+.card-info .btn{
+
+    width:100%;
+
+    margin-top:10px;
+}
+
+/* TALLAS MÁS PEQUEÑAS */
+
+.sizes{
+
+    margin:12px 0;
+}
+
+.sizes span{
+
+    width:32px;
+    height:32px;
+
+    font-size:11px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    color:white;
+}
+
+/* TEXTO MÁS FINO */
+
+.card-info h3{
+
+    font-size:20px !important;
+
+    margin-bottom:8px;
+}
+
+.price{
+
+    font-size:18px !important;
+}
+.remove-btn{
+
+    background:none;
+
+    border:none;
+
+    color:red;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    font-weight:bold;
+}
+.about-dropdown{
+
+    position:fixed;
+
+    top:95px;
+    right:40px;
+
+    width:320px;
+
+    background:rgba(0,0,0,.94);
+
+    border:1px solid rgba(197,160,40,.25);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:4000;
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+}
+
+.about-dropdown div{
+
+    padding:20px;
+
+    color:white;
+
+    cursor:pointer;
+
+    letter-spacing:2px;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    transition:.3s ease;
+}
+
+.about-dropdown div:hover{
+
+    background:var(--dorado);
+
+    color:#111;
+
+    padding-left:30px;
+}
+
+.about-dynamic{
+
+    min-height:100vh;
+
+    background:#050505;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:120px 10%;
+}
+
+.about-pattern{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--dorado);
+
+    opacity:.03;
+
+    font-size:8rem;
+
+    font-weight:700;
+
+    letter-spacing:40px;
+
+    transform:rotate(-25deg);
+
+    pointer-events:none;
+}
+
+.about-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    text-align:center;
+}
+
+.about-content h1{
+
+    color:var(--dorado);
+
+    font-size:4rem;
+
+    letter-spacing:6px;
+
+    margin-bottom:30px;
+}
+
+.about-content p{
+
+    color:#d8d8d8;
+
+    line-height:2;
+
+    font-size:1.1rem;
+}
+
+.about-socials{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+}
+
+.about-socials a,
+.work-link{
+
+    padding:14px 28px;
+
+    border:1px solid var(--dorado);
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    color:var(--dorado);
+
+    transition:.3s ease;
+}
+
+.about-socials a:hover,
+.work-link:hover{
+
+    background:var(--dorado);
+
+    color:#111;
+
+    transform:translateY(-4px);
+}
+.product-modal{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:5000;
+}
+
+.product-modal.active{
+    display:flex;
+}
+
+.modal-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+}
+
+.modal-content{
+
+    position:relative;
+
+    width:90%;
+    max-width:1000px;
+
+    background:white;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    z-index:2;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    animation:modalShow .4s ease;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.modal-left{
+
+    background:#f3f3f3;
+}
+
+.modal-left img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.modal-right{
+
+    padding:50px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.modal-brand{
+
+    color:var(--dorado);
+
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:bold;
+
+    margin-bottom:15px;
+}
+
+.modal-right h2{
+
+    font-size:2.2rem;
+
+    margin:0 0 15px 0;
+
+    line-height:1.2;
+}
+
+.modal-price{
+
+    color:#111;
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+}
+
+.modal-desc{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+.modal-sizes{
+
+    display:flex;
+    gap:12px;
+
+    margin-bottom:30px;
+}
+
+.modal-size{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid #ddd;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.modal-size:hover,
+.modal-size.active{
+
+    background:var(--dorado);
+
+    color:#111;
+
+    border-color:var(--dorado);
+}
+
+.modal-buy-btn{
+
+    padding:16px;
+
+    border:none;
+
+    background:#111;
+
+    color:white;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.modal-buy-btn:hover{
+
+    background:var(--dorado);
+
+    color:#111;
+}
+
+.close-modal{
+
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    z-index:5;
+}
+
+@keyframes modalShow{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@media(max-width:768px){
+
+    .modal-content{
+
+        grid-template-columns:1fr;
+        max-height:90vh;
+
+        overflow:auto;
+    }
+
+    .modal-left img{
+
+        height:350px;
+    }
+
+    .modal-right{
+
+        padding:30px;
+    }
+
+    .modal-right h2{
+
+        font-size:1.7rem;
+    }
+}
+.scenic-bg{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.scenic-bg::before{
+
+    content:"AG ✦  AG  ✦  AG";
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:55px;
+
+    font-family:'Cinzel', serif;
+
+    font-weight:700;
+
+    letter-spacing:12px;
+
+    color:rgba(255,255,255,0.03);
+
+    transform:rotate(-25deg) scale(1.5);
+
+    white-space:nowrap;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+.scenic-bg::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    top:15%;
+    right:10%;
+
+    font-size:120px;
+
+    color:rgba(197,160,40,0.05);
+
+    z-index:0;
+}
+.btn-cotizar{
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #111,
+        #1d1d1d
+    );
+
+    border:1px solid rgba(197,160,40,.35);
+
+    backdrop-filter:blur(10px);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.btn-cotizar:hover{
+
+    transform:translateY(-3px);
+
+    background:linear-gradient(
+        135deg,
+        var(--dorado),
+        #e0bb45
+    );
+
+    color:#111;
+
+    box-shadow:
+        0 12px 30px rgba(197,160,40,.35),
+        0 0 25px rgba(197,160,40,.18);
+}
+.ag-pattern{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+.ag-pattern::before{
+
+    content:
+    "AG   AG   AG   AG   AG   AG   AG   AG   "
+    "AG   AG   AG   AG   AG   AG   AG   AG   "
+    "AG   AG   AG   AG   AG   AG   AG   AG";
+
+    position:absolute;
+
+    top:-20%;
+    left:-10%;
+
+    width:140%;
+    height:140%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:'Cinzel', serif;
+
+    font-size:90px;
+
+    font-weight:700;
+
+    letter-spacing:35px;
+
+    line-height:140px;
+
+    color:rgba(255,255,255,0.035);
+
+    transform:rotate(-25deg);
+
+    white-space:pre-wrap;
+}
+
+/* A encima de G */
+
+.ag-pattern::after{
+
+    content:"AG";
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:'Cinzel', serif;
+
+    font-size:110px;
+
+    font-weight:700;
+
+    color:rgba(197,160,40,0.04);
+
+    transform:rotate(-25deg);
+
+    letter-spacing:50px;
+
+    mix-blend-mode:screen;
+}
+.success-payment{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:5000;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.4s ease;
+}
+
+.success-payment.active{
+
+    opacity:1;
+    pointer-events:auto;
+}
+
+.success-box{
+
+    width:90%;
+    max-width:420px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(197,160,40,.25);
+
+    border-radius:28px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35),
+        0 0 40px rgba(197,160,40,.12);
+
+    animation:successPop .45s ease;
+}
+
+.success-icon{
+
+    width:85px;
+    height:85px;
+
+    margin:auto auto 25px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--dorado),
+        #f0cf67
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#111;
+
+    font-size:42px;
+    font-weight:bold;
+
+    box-shadow:
+        0 10px 30px rgba(197,160,40,.35);
+}
+
+.success-box h2{
+
+    color:white;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+
+    font-family:'Cinzel', serif;
+}
+
+.success-box p{
+
+    color:#d6d6d6;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    margin-bottom:30px;
+}
+
+.success-box button{
+
+    border:none;
+
+    background:var(--dorado);
+
+    color:#111;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.success-box button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(197,160,40,.25);
+}
+
+@keyframes successPop{
+
+    from{
+        opacity:0;
+        transform:scale(.85) translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+.about-dropdown{
+    position: absolute;
+    top: 100px;
+    right: 5%;
+    background: #050505;
+    border: 1px solid rgba(212,175,55,0.2);
+    display: none;
+    flex-direction: column;
+    min-width: 250px;
+    z-index: 9999;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.about-dropdown div{
+    padding: 18px 25px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.about-dropdown div:hover{
+    background: var(--dorado);
+    color: black;
+}
+
+.show-dropdown{
+    display: flex;
+}
+</style>
+</head>
+<div class="cursor-glow"></div>
+<body>
+
+<div id="loader">
+    <div class="wind-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<header>
+ <div id="cart-panel"
+style="
+position:fixed;
+right:-420px;
+top:0;
+width:380px;
+max-width:90%;
+height:100vh;
+background:rgba(255,255,255,0.98);
+backdrop-filter:blur(20px);
+z-index:3000;
+transition:0.45s ease;
+padding:25px;
+box-shadow:-10px 0 40px rgba(0,0,0,0.15);
+color:black;
+display:flex;
+flex-direction:column;
+border-left:1px solid rgba(197,160,40,0.2);
+overflow:hidden;
+">
+
+    <!-- HEADER -->
+    <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom:1px solid rgba(197,160,40,0.25);
+        padding-bottom:15px;
+        margin-bottom:20px;
+    ">
+
+        <h2 style="
+            margin:0;
+            font-size:18px;
+            letter-spacing:2px;
+            color:#111;
+        ">
+            MI CARRITO
+        </h2>
+
+        <button
+            onclick="toggleCart()"
+            style="
+                background:none;
+                border:none;
+                font-size:28px;
+                cursor:pointer;
+                color:#111;
+            "
+        >
+            &times;
+        </button>
+
+    </div>
+
+    <!-- PRODUCTOS -->
+    <div
+        id="cart-items-list"
+        style="
+            flex:1;
+            overflow-y:auto;
+            padding-right:5px;
+        "
+    ></div>
+
+    <!-- FOOTER -->
+    <div style="
+        border-top:1px solid #eee;
+        padding-top:20px;
+        margin-top:15px;
+    ">
+
+        <h3
+            id="total-price"
+            style="
+                margin-bottom:15px;
+                color:#111;
+            "
+        >
+            Total: $0
+        </h3>
+
+        <button
+            class="btn btn-buy"
+            onclick="checkoutCart()"
+            style="
+                width:100%;
+                padding:14px;
+                border:none;
+                border-radius:12px;
+                background:var(--dorado);
+                color:#111;
+                font-weight:bold;
+                cursor:pointer;
+                letter-spacing:1px;
+            "
+        >
+            FINALIZAR COMPRA
+        </button>
+
+    </div>
+
+</div>
+    <div id="cart-overlay" onclick="toggleCart()" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:none; z-index:1500;"></div>
+    
+    <div class="logo-container">
+     <h2 onclick="goHome()" style="cursor:pointer;">ALTAGRACIA WEAR</h2>
+<p style="margin:0;font-size:10px;letter-spacing:3px;color:var(--dorado);">
+    DISEÑO & CONFECCIÓN
+</p>
+    </div>
+
+    <nav>
+        <a onclick="goHome()">Inicio</a>
+        <a onclick="filterBy('brand','NIKE')">Nike</a>
+        <a onclick="filterBy('brand','ADIDAS')">Adidas</a>
+        <a onclick="filterBy('brand','DIOR')">Dior</a>
+        <a onclick="filterBy('brand','BALENCIAGA')">Balenciaga</a>
+        <a onclick="filterBy('brand','MONASTERY')">Monastery</a>
+        <a onclick="filterBy('brand','Exclusivo')" style="color:var(--dorado);">Exclusivo de la Tienda</a>
+        <a onclick="toggleAboutDropdown()">Nosotros</a>
+    </nav>
+
+    <div class="search">
+        <input type="text" placeholder="Buscar producto..." onkeyup="search(event)">
+    </div>
+
+    <div style="font-weight:bold; cursor:pointer;" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+</header>
+<div id="about-dropdown" class="about-dropdown">
+
+    <div onclick="window.location.href='vision.html'">
+        VISIÓN
+    </div>
+
+    <div onclick="window.location.href='mision.html'">
+        MISIÓN
+    </div>
+
+    <div onclick="window.location.href='quienes.html'">
+        QUIÉNES SOMOS
+    </div>
+
+    <div onclick="window.location.href='contacto.html'">
+        CONTÁCTANOS
+    </div>
+
+    <div onclick="window.location.href='colaboradores.html'">
+        COLABORADORES
+    </div>
+
+    <div onclick="window.location.href='trabajo.html'">
+        TRABAJA CON NOSOTROS
+    </div>
+
+</div>
+</div>
+</div>
+   <div class="top-bar">
+    ENVÍOS GRATIS EN COMPRAS SUPERIORES A $200.000 • DROP LIMITADO 2026
+</div>
+<button class="cat-btn" onclick="filterBy('gender','Dama')">
+    DAMA
+</button>
+
+<button class="cat-btn" onclick="filterBy('gender','Caballero')">
+    CABALLERO
+</button>
+
+<section id="home" class="hero">
+
+    <div class="hero-wrapper">
+        <div class="video-container">
+
+            <video autoplay muted loop playsinline class="video-bg">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-content">
+            
+    <h1>ALTAGRACIA WEAR</h1>
+    <p>
+        Siluetas limpias, confección precisa y textiles premium pensados para quienes
+        entienden que el estilo no se improvisa.
+    </p>
+</div>
+               
+            </div>
+
+        </div>
+    </div>
+
+<section class="scenic-bg" style="padding:60px 5%; background:#111;color:white; text-align:center; margin-top:50px; border-radius:20px;">
+    <div class="ag-pattern"></div>
+        <h2 style="font-size:2rem; color:var(--dorado); margin-bottom:20px;">
+            VESTUARIO ESCÉNICO
+        </h2>
+
+        <p style="max-width:700px; margin:auto; margin-bottom:30px; color:#ddd;">
+            Diseños exclusivos para artistas, performers y creadores que buscan destacar en escena.
+        </p>
+
+        <div style="max-width:800px; margin:auto; border-radius:20px; overflow:hidden;">
+            <video autoplay muted loop playsinline class="video-bg">
+                <source  src="videos/Video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        </div>
+    </section>
+<section class="trust-bar">
+    <div>ENVÍOS NACIONALES</div>
+    <div>DISEÑO PERSONALIZADO</div>
+    <div>PAGO SEGURO</div>
+    <div>CALIDAD PREMIUM</div>
+</section>
+<section class="brand-story reveal">
+    <div class="brand-story-content">
+        <h2>LA ESENCIA DE ALTAGRACIA</h2>
+
+        <p>
+            Creamos piezas para quienes entienden que vestir también es presencia.
+            Cada diseño nace de una visión donde el lujo, la calle y la identidad
+            se encuentran en una sola silueta.
+        </p>
+    </div>
+</section>
+<section class="brand-values">
+    <h2>POR QUÉ ALTAGRACIA</h2>
+
+    <div class="values-grid">
+        <div class="value-card">
+            <h3>CONFECCIÓN PREMIUM</h3>
+            <p>
+                Cada pieza es trabajada con precisión para garantizar estructura,
+                caída y presencia superior.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <h3>DISEÑO EXCLUSIVO</h3>
+            <p>
+                Creamos prendas pensadas para destacar, no para mezclarse con lo común.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <h3>IDENTIDAD DE MARCA</h3>
+            <p>
+                ALTAGRACIA representa presencia, estilo y una visión estética propia.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="lookbook">
+    <div class="lookbook-text">
+        <h2>EDITORIAL / Artist Creator</h2>
+        <p>
+            Inspirado en la energía de la calle y elevado con diseño de autor.
+            ALTAGRACIA no sigue tendencias, las impone.
+        </p>
+    </div>
+
+<div class="lookbook-grid reveal-img">
+
+    <img src="images/look1.jpg" alt="Lookbook 1">
+
+    <img src="images/look2.jpg" alt="Lookbook 2">
+
+    <img src="images/look3.jpg" alt="Lookbook 3">
+<button 
+    class="btn-cotizar"
+    onclick="window.open('https://wa.me/573027271033?text=Hola%20ALTAGRACIA%20WEAR%20✨%20Quiero%20cotizar%20un%20diseño%20personalizado','_blank')"
+>
+    ✦ Cotizar Diseño
+</button>
+</div>
+</section>
+<section class="testimonials">
+    <h2>QUIENES VISTEN ALTAGRACIA</h2>
+
+ <div class="testimonial-grid reveal-img">
+        <div class="testimonial-card">
+            <p>"Diseños impecables, calidad absurda y atención brutal."</p>
+            <span>— Cliente Premium</span>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"Mi vestuario escénico quedó exactamente como lo imaginé."</p>
+            <span>— Artista Local</span>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"No parece ropa común, se siente como una pieza exclusiva."</p>
+            <span>— Comprador Verificado</span>
+        </div>
+    </div>
+</section>
+<section class="final-cta">
+    <h2>DROP PRIVADO / DESCUENTOS</h2>
+
+    <p>
+        Accede a piezas seleccionadas con beneficios exclusivos
+        por tiempo limitado.
+    </p>
+
+    <div class="promo-grid">
+
+        <div class="promo-card">
+            <span>-20%</span>
+            <h3>HOODIES PREMIUM</h3>
+            <p>Seleccionados ALTAGRACIA</p>
+        </div>
+
+        <div class="promo-card">
+            <span>2x1</span>
+            <h3>TEES STREETWEAR</h3>
+            <p>Solo esta semana</p>
+        </div>
+
+        <div class="promo-card">
+            <span>ENVÍO GRATIS</span>
+            <h3>COMPRAS +200K</h3>
+            <p>Nacional Colombia</p>
+        </div>
+
+    </div>
+
+    <button onclick="filterBy('brand','Exclusivo')" class="btn btn-buy cta-btn">
+        VER PROMOCIONES
+    </button>
+</section>
+    <button onclick="filterBy('brand','Exclusivo')" class="btn btn-buy cta-btn">
+        EXPLORAR COLECCIÓN
+    </button>
+</section>
+</section> 
+<section id="shop" style="display:none;">
+    <h2 id="section-title" style="text-align:center; margin-top:30px; text-transform:uppercase; letter-spacing:3px;">Productos</h2>
+    <div class="products-grid" id="products"></div>
+</section>
+<div id="overlay-pago" onclick="cerrarPago()"></div>
+<div id="modal-pago" class="modal-pago">
+    <div style="text-align: right;">
+        <button onclick="cerrarPago()" style="background:none; border:none; font-size:25px; cursor:pointer;">&times;</button>
+    </div>
+    <h2 style="text-align:center; margin-top:0; color:var(--dorado);">PAGO SEGURO</h2>
+<div class="tarjetas-icons">
+
+    <span id="card-type-icon">
+        💳
+    </span>
+
+    <span>🛡️</span>
+    <span>🔒</span>
+
+</div>
+    <p id="pago-producto-nombre" style="text-align:center; font-weight:bold; font-size:14px;"></p>
+    <form onsubmit="procesarPago(event)">
+        <label style="font-size:12px;">Número de Tarjeta</label>
+<input 
+    type="text"
+    id="card-number"
+    class="input-pago"
+    placeholder="0000 0000 0000 0000"
+    oninput="detectarTarjeta(this.value)"
+    required
+>
+        <div style="display:flex; gap:10px;">
+            <div style="flex:1;">
+                <label style="font-size:12px;">Fecha (MM/AA)</label>
+                <input type="text" class="input-pago" placeholder="12/26" required>
+            </div>
+            <div style="flex:1;">
+                <label style="font-size:12px;">CVV</label>
+                <input type="text" class="input-pago" placeholder="123" required>
+            </div>
+        </div>
+        <label style="font-size:12px;">Nombre en la Tarjeta</label>
+        <input type="text" class="input-pago" placeholder="EJ. JUAN PEREZ" required>
+        <button type="submit" class="btn btn-buy" style="margin-top:15px;">PAGAR AHORA</button>
+    </form>
+    <p style="text-align:center; font-size:10px; color:gray; margin-top:15px;">Encriptación de 256 bits. Tus datos están protegidos.</p>
+</div>
+<section class="final-claim reveal">
+    <h2>NO VENDEMOS SOLO ROPA</h2>
+    <p>
+        Diseñamos piezas para quienes entienden que vestir bien
+        también es una forma de presencia.
+    </p>
+</section>
+<div id="product-modal" class="product-modal">
+
+    <div class="modal-overlay" onclick="closeProductModal()"></div>
+
+    <div class="modal-content">
+
+        <button class="close-modal" onclick="closeProductModal()">
+            &times;
+        </button>
+
+        <div class="modal-left">
+
+            <img id="modal-img" src="" alt="">
+
+        </div>
+
+        <div class="modal-right">
+
+            <p class="modal-brand" id="modal-brand"></p>
+
+            <h2 id="modal-name"></h2>
+
+            <p class="modal-price" id="modal-price"></p>
+
+            <p class="modal-desc">
+                Confección premium, silueta moderna y acabados diseñados
+                para destacar en cualquier entorno.
+            </p>
+
+            <div class="modal-sizes">
+
+                <button class="modal-size">S</button>
+                <button class="modal-size">M</button>
+                <button class="modal-size">L</button>
+                <button class="modal-size">XL</button>
+
+            </div>
+
+            <button id="modal-buy-btn" class="modal-buy-btn">
+                AÑADIR AL CARRITO
+            </button>
+
+        </div>
+    </div>
+    </div>
+<div id="success-payment" class="success-payment">
+
+    <div class="success-box">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>PAGO APROBADO</h2>
+
+        <p>
+            Tu compra fue procesada correctamente.
+            ALTAGRACIA WEAR se pondrá en contacto contigo.
+        </p>
+
+        <button onclick="closeSuccessPayment()">
+            CONTINUAR
+        </button>
+
+    </div>
+
+</div>
+</section>
+<footer style="background: #000; color: #888; padding: 40px 5%; text-align: center; border-top: 1px solid #333; font-size: 12px; line-height: 1.8;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <p style="margin-bottom: 10px; color: #bbb;">
+         © 2026 <strong>Athletic Sport, Inc. S.A.S</strong>| Parque Industrial Gran Sabana<br>
+            Desarrollo Industrial Muisca Unidad Privada 7C Bodega 18. | Todos los derechos reservados.
+        </p>
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="#" style="color: var(--dorado); text-decoration: none; font-weight: bold;">Términos de venta</a>
+            <a href="#" style="color: var(--dorado); text-decoration: none; font-weight: bold;">Términos de uso</a>
+            <a href="#" style="color: var(--dorado); text-decoration: none; font-weight: bold;">Política de privacidad</a>
+        </div>
+        <div style="margin-top: 30px; opacity: 0.5; font-size: 10px; letter-spacing: 2px;">ALTAGRACIA WEAR  • DISEÑO & CONFECCIÓN PREMIUM</div>
+    </div>
+</footer>
+<a href="https://wa.me/573027271033" class="whatsapp-float" target="_blank">
+    WHATSAPP
+</a>
+<script>
+
+const WHATSAPP = "573027271033";
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+const products = [
+
+{ id:1, name:"Nike Hoodie Dama", brand:"NIKE", gender:"Dama", price:120000,img:"images/nike_dama.jpg"},
+{ id:2, name:"Crop Top Dama", brand:"NIKE", gender:"Dama", price:50000, img:"images/nike-top.jpg"},
+{ id:3, name:"Nike Leggings", brand:"NIKE", gender:"Dama", price:110000, img:"images/nike_leggins.jpg"},
+{ id:4, name:"Nike Hoodie Caballero", brand:"NIKE", gender:"Caballero", price:130000, img:"images/nike2.jpg"},
+{ id:5, name:"Nike T-Shirt Hombre", brand:"NIKE", gender:"Caballero", price:70000, img:"images/nike1.jpg"},
+{ id:6, name:"Nike Jogger Pro", brand:"NIKE", gender:"Caballero", price:140000, img:"images/nike3.jpg"},
+
+{ id:7, name:"Adidas Jacket Dama", brand:"ADIDAS", gender:"Dama", price:120000, img:"images/jacket_adidas.jpg"},
+{ id:8, name:"Adidas Crop Top Dama", brand:"ADIDAS", gender:"Dama", price:50000, img:"images/adidas_croptop.jpg"},
+{ id:9, name:"Adidas Pant Dama", brand:"ADIDAS", gender:"Dama", price:110000, img:"images/adidas_pants.jpg"},
+{ id:10, name:"Adidas Hoodie Hombre", brand:"ADIDAS", gender:"Caballero", price:130000, img:"images/adidas_hoddie.jpg"},
+{ id:11, name:"Adidas Tracksuit Full", brand:"ADIDAS", gender:"Caballero", price:200000, img:"images/adidas_set.jpg"},
+{ id:12, name:"Adidas T-Shirt", brand:"ADIDAS", gender:"Caballero", price:70000, img:"images/adidas_tshirt.jpg"},
+
+{ id:13, name:"Dior Tee", brand:"DIOR", gender:"Dama", price:50000, img:"images/dior-tee.jpg"},
+{ id:14, name:"Dior Jacket", brand:"DIOR", gender:"Dama", price:180000, img:"images/jacket_dior.jpg"},
+{ id:15, name:"Dior Skirt", brand:"DIOR", gender:"Dama", price:210000, img:"images/Dior_skirt.jpg"},
+{ id:16, name:"Dior Shirt Luxury", brand:"DIOR", gender:"Caballero", price:75000, img:"images/dior_shirt.jpg"},
+{ id:17, name:"Dior Oblique Hoodie", brand:"DIOR", gender:"Caballero", price:150000, img:"images/dior_hoddie.jpg"},
+{ id:18, name:"Dior Set", brand:"DIOR", gender:"Caballero", price:250000, img:"images/dior_set.jpg"},
+
+{ id:19, name:"Balenciaga Tee", brand:"BALENCIAGA", gender:"Dama", price:50000, img:"images/balen_tee.jpg"},
+{ id:20, name:"Balenciaga Jacket", brand:"BALENCIAGA", gender:"Dama", price:180000, img:"images/balen_jacket.jpg"},
+{ id:21, name:"Balenciaga Skirt", brand:"BALENCIAGA", gender:"Dama", price:210000, img:"images/balen_skirt.jpg"},
+{ id:22, name:"Balenciaga Oversize Hoodie", brand:"BALENCIAGA", gender:"Caballero", price:160000, img:"images/balen_hoddie.jpg"},
+{ id:23, name:"Balenciaga T-Shirt", brand:"BALENCIAGA", gender:"Caballero", price:75000, img:"images/balen_shirt.jpg"},
+{ id:24, name:"Balenciaga Pants", brand:"BALENCIAGA", gender:"Caballero", price:150000, img:"images/balen_pants.jpg"},
+
+{ id:25, name:"Monastery Set Dama", brand:"MONASTERY", gender:"Dama", price:110000, img:"images/monastery_set.jpg"},
+{ id:26, name:"Monastery Tee Dama", brand:"MONASTERY", gender:"Dama", price:50000, img:"images/monastery_tee.jpg"},
+{ id:27, name:"Monastery Hoodie Dama", brand:"MONASTERY", gender:"Dama", price:135000, img:"images/monastery_hoddie.jpg"},
+{ id:28, name:"Monastery Hoodie Men", brand:"MONASTERY", gender:"Caballero", price:180000, img:"images/monastery_hoodie.jpg"},
+{ id:29, name:"Monastery Tee", brand:"MONASTERY", gender:"Caballero", price:70000, img:"images/monastery_t-shirt.jpg"},
+{ id:30, name:"Monastery Jogger", brand:"MONASTERY", gender:"Caballero", price:145000, img:"images/monastery_jogger.jpg"},
+
+{ id:31, name:"ALTAGRACIA Set Dama", brand:"Exclusivo", gender:"Dama", price:220000, img:"images/hg_oversize.jpg"},
+{ id:32, name:"ALTAGRACIA Dama", brand:"Exclusivo", gender:"Dama", price:60000, img:"images/crop_top2.jpg"},
+{ id:33, name:"ALTAGRACIA Hoodie Dama", brand:"Exclusivo", gender:"Dama", price:180000, img:"images/hoodie_hg.jpg"},
+{ id:34, name:"ALTAGRACIA Set Hombre", brand:"Exclusivo", gender:"Caballero", price:220000, img:"images/producto4.jpg"},
+{ id:35, name:"ALTAGRACIA Streetwear", brand:"Exclusivo", gender:"Caballero", price:80000, img:"images/hg_premium.jpg"},
+{ id:36, name:"ALTAGRACIA Hoodie", brand:"Exclusivo", gender:"Caballero", price:190000, img:"images/hg_hoodie.jpg"}
+
+];
+
+
+/* =========================
+   CARRITO
+========================= */
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+/* =========================
+   LOADER
+========================= */
+
+function showPageLoader(callback){
+
+    const loader = document.getElementById("loader");
+
+    loader.style.display = "flex";
+
+    setTimeout(() => {
+
+        callback();
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        }, 400);
+
+    }, 300);
+}
+
+
+/* =========================
+   INICIO
+========================= */
+
+window.onload = () => {
+
+    setTimeout(() => {
+
+        document.getElementById("loader").style.display = "none";
+
+    }, 700);
+
+    updateCartUI();
+};
+
+
+/* =========================
+   RENDER PRODUCTOS
+========================= */
+
+function render(list, title = "Productos"){
+
+    document.getElementById("home").style.display = "none";
+
+    document.getElementById("shop").style.display = "block";
+
+    document.getElementById("section-title").innerText = title;
+
+    document.getElementById("products").innerHTML = list.map(p => `
+
+        <div class="card premium-card">
+
+            <div class="product-badge">
+                NEW DROP
+            </div>
+
+            <div class="img-container">
+
+         <img 
+    src="${p.img}" 
+    alt="${p.name}"
+    onclick="openProductModal(${p.id})"
+    style="cursor:pointer;"
+>
+                <div class="floating-view">
+                    STREET LUXURY
+                </div>
+
+            </div>
+
+            <div class="card-info">
+
+                <h3>${p.name}</h3>
+
+                <p class="price">
+                    $${p.price.toLocaleString()}
+                </p>
+
+                <p class="gender-tag">
+                    ${p.gender}
+                </p>
+
+              <div class="sizes">
+
+    <button class="size-btn" onclick="selectSize(this)">
+        S
+    </button>
+
+    <button class="size-btn" onclick="selectSize(this)">
+        M
+    </button>
+
+    <button class="size-btn" onclick="selectSize(this)">
+        L
+    </button>
+
+    <button class="size-btn" onclick="selectSize(this)">
+        XL
+    </button>
+
+</div>
+
+<button class="btn btn-cart" onclick="add(${p.id}, this)">
+                    Añadir al Carrito
+                </button>
+
+                <button class="btn btn-buy" onclick="abrirPago('${p.name}')">
+                    Comprar Ahora
+                </button>
+
+            </div>
+
+        </div>
+
+    `).join("");
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+function goHome(){
+
+    showPageLoader(() => {
+
+        document.getElementById("home").style.display = "block";
+
+        document.getElementById("shop").style.display = "none";
+
+        window.scrollTo(0,0);
+
+    });
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+function filterBy(type, val){
+
+    showPageLoader(() => {
+
+        const filtered = products.filter(p => p[type] === val);
+
+        render(filtered, val);
+
+        window.scrollTo(0,0);
+
+    });
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function search(e){
+
+    if(e.key === "Enter"){
+
+        showPageLoader(() => {
+
+            const q = e.target.value.toLowerCase();
+
+            const found = products.filter(p =>
+
+                p.name.toLowerCase().includes(q) ||
+                p.brand.toLowerCase().includes(q)
+
+            );
+
+            render(found, `Buscando: ${q}`);
+
+        });
+    }
+}
+
+
+/* =========================
+   ABRIR CARRITO
+========================= */
+
+function toggleCart() {
+
+    const panel = document.getElementById("cart-panel");
+    const overlay = document.getElementById("cart-overlay");
+
+    const abierto = panel.style.right === "0px";
+
+    if (abierto) {
+
+        panel.style.right = "-420px";
+        overlay.style.display = "none";
+
+    } else {
+
+        panel.style.right = "0";
+        overlay.style.display = "block";
+
+        updateCartUI();
+    }
+}
+function selectSize(btn){
+
+    const parent = btn.parentElement;
+
+    parent.querySelectorAll('.size-btn').forEach(b=>{
+        b.classList.remove('active');
+    });
+
+    btn.classList.add('active');
+}
+
+/* =========================
+   AGREGAR AL CARRITO
+========================= */
+
+function add(id, button) {
+
+    const card = button.closest('.premium-card');
+
+    const activeSize = card.querySelector('.size-btn.active');
+
+    if(!activeSize){
+        alert("Selecciona una talla primero 😎");
+        return;
+    }
+
+    const selectedSize = activeSize.innerText;
+
+    const existing = cart.find(
+        item => item.id === id && item.size === selectedSize
+    );
+
+    if(existing){
+
+        existing.qty += 1;
+
+    } else {
+
+        const prod = products.find(p => p.id === id);
+
+        cart.push({
+            ...prod,
+            size:selectedSize,
+            qty:1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartUI();
+
+    toggleCart();
+}
+
+/* =========================
+   ACTUALIZAR CARRITO
+========================= */
+
+function updateCartUI() {
+
+    const list = document.getElementById("cart-items-list");
+
+    let total = 0;
+
+    if (cart.length === 0) {
+
+        list.innerHTML = `
+            <p style="
+                text-align:center;
+                color:gray;
+                margin-top:30px;
+            ">
+                El carrito está vacío
+            </p>
+        `;
+
+    } else {
+
+        list.innerHTML = cart.map((item, index) => {
+
+            const subtotal = item.price * item.qty;
+
+            total += subtotal;
+
+            return `
+
+                <div style="
+                    background:#f8f8f8;
+                    border-radius:16px;
+                    padding:15px;
+                    margin-bottom:15px;
+                    border:1px solid #eee;
+                ">
+
+                    <div style="
+                        display:flex;
+                        gap:12px;
+                        align-items:center;
+                    ">
+
+                        <img 
+                            src="${item.img}" 
+                            style="
+                                width:70px;
+                                height:70px;
+                                object-fit:cover;
+                                border-radius:12px;
+                            "
+                        >
+
+                        <div style="flex:1;">
+
+                            <p style="
+                                margin:0;
+                                font-weight:bold;
+                                font-size:13px;
+                                color:#111;
+                            ">
+                                ${item.name}
+                            </p>
+
+                            <p style="
+                                margin:4px 0;
+                                color:#777;
+                                font-size:12px;
+                            ">
+                                Talla ${item.size}
+                            </p>
+
+                            <p style="
+                                margin:0;
+                                color:var(--dorado);
+                                font-weight:bold;
+                                font-size:14px;
+                            ">
+                                $${subtotal.toLocaleString()}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div style="
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                        margin-top:15px;
+                    ">
+
+                        <div style="
+                            display:flex;
+                            align-items:center;
+                            gap:10px;
+                        ">
+
+                            <button
+                                onclick="decreaseQty(${index})"
+                                style="
+                                    width:30px;
+                                    height:30px;
+                                    border:none;
+                                    border-radius:50%;
+                                    background:#111;
+                                    color:white;
+                                    cursor:pointer;
+                                    font-size:18px;
+                                "
+                            >
+                                -
+                            </button>
+
+                            <span style="
+                                font-weight:bold;
+                                font-size:14px;
+                            ">
+                                ${item.qty}
+                            </span>
+
+                            <button
+                                onclick="increaseQty(${index})"
+                                style="
+                                    width:30px;
+                                    height:30px;
+                                    border:none;
+                                    border-radius:50%;
+                                    background:var(--dorado);
+                                    color:#111;
+                                    cursor:pointer;
+                                    font-size:18px;
+                                    font-weight:bold;
+                                "
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                        <button
+                            onclick="removeItem(${index})"
+                            style="
+                                border:none;
+                                background:none;
+                                color:red;
+                                font-size:20px;
+                                cursor:pointer;
+                            "
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+    }
+
+    document.getElementById("total-price").innerText =
+        "Total: $" + total.toLocaleString();
+
+    document.getElementById("cart-count").innerText =
+        cart.reduce((acc,item)=> acc + item.qty, 0);
+}
+/* =========================
+   ELIMINAR ITEM
+========================= */
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartUI();
+}
+function increaseQty(index){
+
+    cart[index].qty++;
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartUI();
+}
+
+function decreaseQty(index){
+
+    if(cart[index].qty > 1){
+
+        cart[index].qty--;
+
+    } else {
+
+        cart.splice(index,1);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartUI();
+}
+
+/* =========================
+   CHECKOUT
+========================= */
+
+function checkoutCart(){
+
+    if(cart.length === 0){
+
+        alert("El carrito está vacío");
+
+        return;
+    }
+
+    const items = cart.map(i => i.name).join(", ");
+
+    const total = cart.reduce((acc,item) => acc + item.price,0);
+
+    const msg = encodeURIComponent(
+
+        `Hola ALTAGRACIA WEAR, quiero comprar: ${items}. Total: $${total.toLocaleString()}`
+
+    );
+
+    window.open(
+
+        `https://wa.me/${WHATSAPP}?text=${msg}`,
+
+        "_blank"
+    );
+}
+
+
+/* =========================
+   MODAL PAGO
+========================= */
+
+function abrirPago(nombreProducto){
+
+    document.getElementById("pago-producto-nombre").innerText =
+    "Producto: " + nombreProducto;
+
+    document.getElementById("modal-pago").classList.add("active");
+
+    document.getElementById("overlay-pago").style.display = "block";
+}
+
+function cerrarPago(){
+
+    document.getElementById("modal-pago").classList.remove("active");
+
+    document.getElementById("overlay-pago").style.display = "none";
+}
+
+function procesarPago(e){
+
+    e.preventDefault();
+
+    const btn = e.target.querySelector("button");
+
+    btn.innerText = "PROCESANDO...";
+
+    btn.disabled = true;
+
+    setTimeout(() => {
+
+showSuccessPayment();
+
+        cerrarPago();
+
+        e.target.reset();
+
+        btn.innerText = "PAGAR AHORA";
+
+        btn.disabled = false;
+
+    }, 2500);
+}
+function showSuccessPayment(){
+
+    document
+        .getElementById("success-payment")
+        .classList.add("active");
+}
+
+function closeSuccessPayment(){
+
+    document
+        .getElementById("success-payment")
+        .classList.remove("active");
+}
+function detectCard(input){
+
+    let value = input.value.replace(/\D/g,'');
+
+    value = value.replace(/(.{4})/g, '$1 ').trim();
+
+    input.value = value;
+
+    const card = document.getElementById("card-type");
+
+    const number = value.replace(/\s/g,'');
+
+    if(number.startsWith('4')){
+
+        card.innerHTML = '💳 VISA';
+
+    }
+    else if(
+        number.startsWith('5') ||
+        number.startsWith('2')
+    ){
+
+        card.innerHTML = '💳 MASTERCARD';
+
+    }
+    else if(number.startsWith('3')){
+
+        card.innerHTML = '💳 AMEX';
+
+    }
+    else{
+
+        card.innerHTML = '💳';
+    }
+}
+let currentModalProduct = null;
+
+function openProductModal(id){
+
+    const product = products.find(p => p.id === id);
+
+    currentModalProduct = product;
+
+    document.getElementById("modal-img").src = product.img;
+
+    document.getElementById("modal-brand").innerText =
+        product.brand;
+
+    document.getElementById("modal-name").innerText =
+        product.name;
+
+    document.getElementById("modal-price").innerText =
+        "$" + product.price.toLocaleString();
+
+    document
+        .getElementById("product-modal")
+        .classList.add("active");
+}
+
+function closeProductModal(){
+
+    document
+        .getElementById("product-modal")
+        .classList.remove("active");
+}
+
+document.addEventListener("click", e=>{
+
+    if(e.target.classList.contains("modal-size")){
+
+        document.querySelectorAll(".modal-size")
+        .forEach(btn=>btn.classList.remove("active"));
+
+        e.target.classList.add("active");
+    }
+});
+
+document
+.getElementById("modal-buy-btn")
+.addEventListener("click", ()=>{
+
+    const selected =
+        document.querySelector(".modal-size.active");
+
+    if(!selected){
+
+        alert("Selecciona una talla 😎");
+        return;
+    }
+
+    const size = selected.innerText;
+
+    const existing = cart.find(
+        item =>
+        item.id === currentModalProduct.id &&
+        item.size === size
+    );
+
+    if(existing){
+
+        existing.qty++;
+
+    } else {
+
+        cart.push({
+            ...currentModalProduct,
+            size:size,
+            qty:1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartUI();
+
+    closeProductModal();
+
+    toggleCart();
+});
+
+/* =========================
+   REVEAL
+========================= */
+
+const reveals = document.querySelectorAll(".reveal");
+
+const revealImgs = document.querySelectorAll(".reveal-img");
+
+window.addEventListener("scroll", () => {
+
+    reveals.forEach(el => {
+
+        const top = el.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 100){
+
+            el.classList.add("active");
+        }
+    });
+
+    revealImgs.forEach(el => {
+
+        const top = el.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 80){
+
+            el.classList.add("active");
+        }
+    });
+});
+
+
+/* =========================
+   HEADER SCROLL
+========================= */
+
+window.addEventListener("scroll", () => {
+
+    const header = document.querySelector("header");
+
+    if(window.scrollY > 50){
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+    }
+});
+
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+const glow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", (e) => {
+
+    glow.style.left = e.clientX + "px";
+
+    glow.style.top = e.clientY + "px";
+});
+function toggleAboutDropdown() {
+
+    const dropdown = document.getElementById("about-dropdown");
+
+    dropdown.classList.toggle("show-dropdown");
+
+}
+
+function openAbout(type){
+
+    document.getElementById("about-dropdown").style.display = "none";
+
+    document.getElementById("home").style.display = "none";
+    document.getElementById("shop").style.display = "none";
+
+    document.getElementById("about-page").style.display = "block";
+
+    const title = document.getElementById("about-title");
+    const text = document.getElementById("about-text");
+    const extra = document.getElementById("about-extra");
+
+    extra.innerHTML = "";
+
+    if(type === "vision"){
+
+        title.innerText = "VISIÓN";
+
+        text.innerText =
+        "Convertir ALTAGRACIA WEAR en una referencia del street luxury latinoamericano, fusionando identidad, diseño y presencia en cada pieza creada.";
+    }
+
+    if(type === "mision"){
+
+        title.innerText = "MISIÓN";
+
+        text.innerText =
+        "Diseñar prendas y vestuarios que representen autenticidad, estética premium y expresión personal.";
+    }
+
+    if(type === "quienes"){
+
+        title.innerText = "QUIÉNES SOMOS";
+
+        text.innerText =
+        "ALTAGRACIA WEAR nace de la unión entre la calle, el lujo y la identidad visual.";
+    }
+
+    if(type === "contacto"){
+
+        title.innerText = "CONTÁCTANOS";
+
+        text.innerText =
+        "Nuestro equipo está disponible para colaboraciones, pedidos exclusivos y atención personalizada.";
+
+        extra.innerHTML = `
+
+            <div class="about-socials">
+
+                <a href="https://instagram.com/altagraciawear" target="_blank">
+                    INSTAGRAM
+                </a>
+
+                <a href="https://tiktok.com/@altagraciawear" target="_blank">
+                    TIKTOK
+                </a>
+
+                <a href="https://facebook.com/altagraciawear" target="_blank">
+                    FACEBOOK
+                </a>
+
+            </div>
+        `;
+    }
+
+    if(type === "colaboradores"){
+
+        title.innerText = "COLABORADORES";
+
+        text.innerText =
+        "Trabajamos junto a artistas, creativos y visionarios que entienden el impacto de una imagen auténtica.";
+    }
+
+    if(type === "trabajo"){
+
+        title.innerText = "TRABAJA CON NOSOTROS";
+
+        text.innerText =
+        "Buscamos personas apasionadas por la moda, el diseño y la innovación visual.";
+
+        extra.innerHTML = `
+
+            <a
+                class="work-link"
+                target="_blank"
+                href="https://wa.me/573239483038?text=Hola%20ALTAGRACIA%20WEAR,%20estoy%20interesado(a)%20en%20la%20búsqueda%20de%20trabajo."
+            >
+                POSTULARME
+            </a>
+        `;
+    }
+
+    window.scrollTo(0,0);
+}
+</script>
+
+</body>
+</html>
