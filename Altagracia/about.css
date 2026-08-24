@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+body{
+    background: #000;
+    color: white;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* CARD */
+
+.info-card{
+    background: #050505;
+    border: 1px solid rgba(212,175,55,0.15);
+    padding: 70px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 0 50px rgba(0,0,0,0.6);
+    max-width: 1100px;
+    margin: 80px auto;
+}
+
+/* TEXTO */
+
+.info-card p{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    line-height: 1.9;
+    color: #d6d6d6;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+/* TITULOS */
+
+.card-title{
+    color: #d4af37;
+    margin-bottom: 40px;
+    letter-spacing: 6px;
+    font-size: 52px;
+    text-transform: uppercase;
+}
+
+/* EFECTO AG */
+
+.info-card::before{
+    content: 'AG AG AG AG AG';
+    position: absolute;
+    top: -40px;
+    left: -50px;
+    font-size: 120px;
+    color: rgba(212,175,55,0.03);
+    transform: rotate(-18deg);
+    pointer-events: none;
+    line-height: 1.1;
+}
+
+/* BOTON VOLVER */
+
+.back-btn{
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    padding: 14px 30px;
+    background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.3);
+    color: #d4af37;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 12px;
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    transition: 0.35s;
+    z-index: 999;
+}
+
+.back-btn:hover{
+    background: #d4af37;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212,175,55,0.25);
+}
+.info-card{
+    width:85%;
+    margin:60px auto;
+    background:#050505;
+    border:1px solid rgba(212,175,55,0.15);
+    padding:60px;
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+    color:white;
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+
+.info-card::before{
+    content:"AG AG AG AG AG AG";
+    position:absolute;
+    top:-20px;
+    left:-20px;
+    font-size:90px;
+    color:rgba(212,175,55,0.03);
+    line-height:1.2;
+    transform:rotate(-20deg);
+    pointer-events:none;
+}
+
+.card-title{
+    color:#d4af37;
+    margin-bottom:30px;
+    letter-spacing:4px;
+    font-size:42px;
+}
+
+.info-card p{
+    color:#d1d1d1;
+    line-height:1.9;
+    font-size:15px;
+    max-width:900px;
+}
+
+.vision-font{
+    font-family:"Cinzel", serif;
+}
+
+.mission-font{
+    font-family:"Cormorant Garamond", serif;
+}
+
+.who-font{
+    font-family:"Playfair Display", serif;
+}
+
+.contact-font{
+    font-family:"Bebas Neue", sans-serif;
+}
+
+.collab-font{
+    font-family:"Prata", serif;
+}
+
+.work-font{
+    font-family:"Montserrat", sans-serif;
+}
+
+.social-links{
+    margin-top:30px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    color:#d4af37;
+    text-decoration:none;
+    border:1px solid rgba(212,175,55,0.2);
+    padding:12px 20px;
+    transition:0.3s;
+}
+
+.social-links a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.work-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 28px;
+    border:1px solid #d4af37;
+    color:#d4af37;
+    text-decoration:none;
+    letter-spacing:2px;
+    transition:0.3s;
+}
+
+.work-btn:hover{
+    background:#d4af37;
+    color:black;
+    transform:translateY(-3px);
+}
